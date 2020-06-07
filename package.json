@@ -1,0 +1,28 @@
+{
+  "name": "@jasondiazg/javascript",
+  "version": "1.0.0",
+  "description": "A programming course to learn the basic features of JavaScript as Language.",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasondiazg/javascript.git"
+  },
+  "keywords": [
+    "javascript",
+    "course",
+    "programming"
+  ],
+  "author": "Jason Diaz G.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasondiazg/javascript/issues"
+  },
+  "homepage": "https://github.com/jasondiazg/javascript#readme",
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}
