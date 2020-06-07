@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Demo de Arreglos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="../favicon.ico">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Academik</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gramática</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../Gramática y Tipos/gramaticaDemo.html">Gramática y tipos</a>
+                        <a class="dropdown-item" href="../Operadores/operadoresDemo.html">Operadores</a>
+                        <a class="dropdown-item" href="../Flujo de Control y Manejo de Errores/flujoErroresDemo.html">Contro
+                            de flujo y manejo de errores</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estructuras
+                        de Datos</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../Estructuras Repetitivas/estructurasRepetitivasDemo.html">Estructuras
+                            Repetitivas
+                        </a>
+                        <a class="dropdown-item" href="../Funciones/funcionesDemo.html">Funciones</a>
+                        <a class="dropdown-item" href="../Arreglos/arreglosDemo.html">Arreglos</a>
+                        <a class="dropdown-item" href="../Objetos/objetosDemo.html">Objetos</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Asincronía</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../Asincronia/asincronia.html">API Pública</a>
+                        <a class="dropdown-item" href="../Promises/promises.html">Promises</a>
+                        <a class="dropdown-item" href="../Eventos/eventos.html">Eventos</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <h1>Demo de Promises</h1>
+        <p>Esta demo incluye se realiza para la sesión de Promises del curso de programación avanzada Frontend de Academik</p>
+    </div>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="display-3">
+                        <strong>Chuck Norris Jokes!</strong>
+                    </h1>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Type any text</span>
+                        </div>
+                        <input type="text" class="form-control" id="query" />
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button" onclick="getChuckNorrisJokeByQuery()">Get
+                                Chuck Norris Joke</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <h4 id="category-label">Categories:</h4>
+                    <select class="custom-select custom-select-lg mb-3" id="categories">
+                        <option selected>Choose category</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <button type="button" class="btn btn-outline-primary" onclick="getChuckNorrisJoke()">Get Random Chuck
+                        Norris Joke</button>
+                    <button type="button" class="btn btn-outline-dark" onclick="getChuckNorrisJokeByCategory()">Get Chuck
+                        Norris Joke by Category</button>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col">
+                    <h5 id="total" class="float-right"></h5>
+                    <table class="table table-striped table-dark" id="table">
+                        <thead id="thead">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Joke</th>
+                                <th scope="col">URL</th>
+                                <th scope="col">Avatar</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+
+    <script src="./asinconia.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Demo de Gramatica y tipos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="../favicon.ico">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Academik</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gramática</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../Gramática y Tipos/gramaticaDemo.html">Gramática y tipos</a>
+                        <a class="dropdown-item" href="../Operadores/operadoresDemo.html">Operadores</a>
+                        <a class="dropdown-item" href="../Flujo de Control y Manejo de Errores/flujoErroresDemo.html">Contro de flujo y manejo de errores</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estructuras de Datos</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../Estructuras Repetitivas/estructurasRepetitivasDemo.html">Estructuras Repetitivas</a>
+                        <a class="dropdown-item" href="../Funciones/funcionesDemo.html">Funciones</a>
+                        <a class="dropdown-item" href="../Arreglos/arreglosDemo.html">Arreglos</a>
+                        <a class="dropdown-item" href="../Objetos/objetosDemo.html">Objetos</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Asincronía</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../Asincronia/asincronia.html">API Pública</a>
+                        <a class="dropdown-item" href="../Promises/promises.html">Promises</a>
+                        <a class="dropdown-item" href="../Eventos/eventos.html">Eventos</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <h1>Demo de Gramatica y tipos</h1>
+        <p>Esta demo incluye la sesión de Gramática y Tipos para el curso de programación avanzada Frontend de Academik</p>
+    </div>
+
+    <div class="container">
+        <h3>Declarando variables</h3>
+        <button onclick="evaluarVariables()">Evaluar variables</button>
+        <button onclick="variablesVar()">Variables con Var</button>
+        <button onclick="variablesLet()">Variables con Let</button>
+        <button onclick="constantes()">Constantes</button>
+
+        <br/>
+        <br/>
+        <br/>
+        <h3>Probando el ámbito de las variables con Let y Var</h3>
+        <button onclick="varGlobal()">Variable Global</button>
+        <button onclick="ambitoVar()">Ambito con Var</button>
+        <button onclick="ambitoLet()">Ambito con Let</button>
+
+        <br/>
+        <br/>
+        <br/>
+        <h3>Valores en variables</h3>
+        <button onclick="imprimirVariablesConsola()">Imprimir variables en consola</button>
+        <button onclick="valoresDeEscape()">Evaluando valores de escape</button>
+
+    </div>
+
+    <script src="./gramatica.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Demo de Operadores</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="../favicon.ico">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Academik</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gramática</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../Gramática y Tipos/gramaticaDemo.html">Gramática y tipos</a>
+                        <a class="dropdown-item" href="../Operadores/operadoresDemo.html">Operadores</a>
+                        <a class="dropdown-item" href="../Flujo de Control y Manejo de Errores/flujoErroresDemo.html">Contro de flujo y manejo de errores</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estructuras de Datos</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../Estructuras Repetitivas/estructurasRepetitivasDemo.html">Estructuras Repetitivas</a>
+                        <a class="dropdown-item" href="../Funciones/funcionesDemo.html">Funciones</a>
+                        <a class="dropdown-item" href="../Arreglos/arreglosDemo.html">Arreglos</a>
+                        <a class="dropdown-item" href="../Objetos/objetosDemo.html">Objetos</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Asincronía</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../Asincronia/asincronia.html">API Pública</a>
+                        <a class="dropdown-item" href="../Promises/promises.html">Promises</a>
+                        <a class="dropdown-item" href="../Eventos/eventos.html">Eventos</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <h1>Demo de Operadores</h1>
+        <p>Esta demo incluye la sesión de Operadores para el curso de programación avanzada Frontend de Academik</p>
+    </div>
+
+    <div class="container">
+
+        <h3>Operadores Lógicos</h3>
+        <button onclick="evaluarAND()">Evaluar AND</button>
+        <button onclick="evaluarOR()">Evaluar OR</button>
+        <button onclick="evaluarNOT()">Evaluar NOT</button>
+
+        <br/>
+        <br/>
+        <br/>
+        <h3>Concatenación y suma con (+)</h3>
+        <p>Teniendo numero = 2, cadena = "hola" y numeroEnCadena = "5" probemos...</p>
+        <button onclick="concatenar()">Concatenar numero, cadena y numeroEnCadena</button>
+        <button onclick="sumar()">Sumar numero con numeroEnCadena</button>
+
+        <br/>
+        <br/>
+        <br/>
+        <h3>Operador Ternario y Coma</h3>
+        <button onclick="operadorComa()">Evaluar operador coma</button>
+
+        <label>Ingrese su edad:</label>
+        <input id="edad" type="text" />
+        <button onclick="operadorTernario()">Evaluar operador ternario</button>
+
+        <br/>
+        <br/>
+        <br/>
+        <h3>Operadores Unarios</h3>
+        <button onclick="unarioDelete()">Evaluar operador unario delete</button>
+        <button onclick="unarioTypeOf()">Evaluar typeof</button>
+
+        <br/>
+        <br/>
+        <br/>
+        <h3>Operadores Relacionales</h3>
+        <button onclick="relacionalIn()">Evaluar operador relacional in</button>
+        <button onclick="relacionalInstanceof()">Evaluar operador relacional instanceof</button>
+
+        <br/>
+        <br/>
+        <br/>
+        <h3>Demo onchange event</h3>
+        <label>Cantidad</label>
+        <input type="text" id="cantidad1" onchange="calcularSubtotal(1)" />
+        <label>Costo</label>
+        <input type="text" id="costo1" onchange="calcularSubtotal(1)" />
+        <label>Subtotal</label>
+        <input type="text" id="subtotal1" disabled/>
+        <br/>
+
+        <label>Cantidad</label>
+        <input type="text" id="cantidad2" onchange="calcularSubtotal(2)" />
+        <label>Costo</label>
+        <input type="text" id="costo2" onchange="calcularSubtotal(2)" />
+        <label>Subtotal</label>
+        <input type="text" id="subtotal2" disabled/>
+
+        <button onclick="calcularTotal()">Calcular Total</button>
+
+    </div>
+
+    <script src="./operadores.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

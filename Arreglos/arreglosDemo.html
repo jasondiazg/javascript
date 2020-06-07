@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Demo de Arreglos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="../favicon.ico">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Academik</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gramática</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../Gramática y Tipos/gramaticaDemo.html">Gramática y tipos</a>
+                        <a class="dropdown-item" href="../Operadores/operadoresDemo.html">Operadores</a>
+                        <a class="dropdown-item" href="../Flujo de Control y Manejo de Errores/flujoErroresDemo.html">Contro de flujo y manejo de errores</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estructuras de Datos</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../Estructuras Repetitivas/estructurasRepetitivasDemo.html">Estructuras Repetitivas</a>
+                        <a class="dropdown-item" href="../Funciones/funcionesDemo.html">Funciones</a>
+                        <a class="dropdown-item" href="../Arreglos/arreglosDemo.html">Arreglos</a>
+                        <a class="dropdown-item" href="../Objetos/objetosDemo.html">Objetos</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Asincronía</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../Asincronia/asincronia.html">API Pública</a>
+                        <a class="dropdown-item" href="../Promises/promises.html">Promises</a>
+                        <a class="dropdown-item" href="../Eventos/eventos.html">Eventos</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <h1>Demo de Arreglos</h1>
+        <p>Esta demo incluye la sesión de Arreglos para el curso de programación avanzada Frontend de Academik</p>
+    </div>
+    <div class="sticky-top">
+        <div class="col-12">
+            <div class="float-right bg-white">
+                <button type="button" onclick="loadData()" class="btn btn-outline-primary">Cargar Arreglo</button>
+                <button type="button" onclick="saveData()" class="btn btn-outline-success">Guardar Arreglo</button>
+                <button type="button" onclick="removeData()" class="btn btn-outline-danger">Eliminar Arreglo</button>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="bg-dark text-white">
+            <br/>
+            <h1 class="display-4">Matriz</h1>
+            <p id="array" class="lead"></p>
+            <br/>
+        </div>
+    </div>
+    <br/>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="elemento">Elemento a ingresar en Array</label>
+                        <input type="text" class="form-control" id="elemento" placeholder="Elemento">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <button type="button" onclick="push()" class="btn btn-primary">push</button>
+                        <button type="button" onclick="pop()" class="btn btn-secondary">pop</button>
+                        <button type="button" onclick="unshift()" class="btn btn-success">unshift</button>
+                        <button type="button" onclick="shift()" class="btn btn-danger">shift</button>
+                        <button type="button" onclick="reverse()" class="btn btn-warning">reverse</button>
+                        <button type="button" onclick="sort()" class="btn btn-info">sort</button>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Elemento para eliminar</span>
+                            </div>
+                            <input type="text" class="form-control" id="elemento-eliminar">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-primary" type="button" onclick="splice()">splice</button>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Indice del elemento a Eliminar</span>
+                            </div>
+                            <input type="text" class="form-control" id="elemento-eliminar-indice">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-primary" type="button" onclick="spliceIndex()">splice index</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p id="every-some-texto"></p>
+                    <p id="every-some-numeros"></p>
+                </div>
+                <div class="col-12">
+                    <button type="button" onclick="every()" class="btn btn-danger">¿Todos son texto o números? (every)</button>
+                    <button type="button" onclick="some()" class="btn btn-success">¿Hay algún texto o número? (some)</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p id="filter-texto"></p>
+                    <p id="filter-numeros"></p>
+                </div>
+                <div class="col-12">
+                    <button type="button" onclick="filterTexto()" class="btn btn-primary">Filtrar solo texto (filter)</button>
+                    <button type="button" onclick="filterNumeros()" class="btn btn-primary">Filtrar solo números (filter)</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <br/>
+                    <p id="resultados"></p>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Elemento que deseas buscar</span>
+                        </div>
+                        <input type="text" class="form-control" id="elemento-buscar">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button" onclick="find()">find y findIndex</button>
+                            <button class="btn btn-outline-primary" type="button" onclick="includesIndexOf()">includes e indexOf</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p id="slice"></p>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Desde donde extraer</span>
+                        </div>
+                        <input type="text" class="form-control" id="start-slice">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Hasta donde extraer</span>
+                        </div>
+                        <input type="text" class="form-control" id="end-slice">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="button" onclick="slice()" class="btn btn-outline-dark float-right">slice</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="target">En qué posición desea copiar</label>
+                        <input type="text" class="form-control" id="target" placeholder="Posición donde desea copiar">
+                    </div>
+                    <div class="form-group">
+                        <label for="start">En qué posición desea iniciar a copiar</label>
+                        <input type="text" class="form-control" id="start" placeholder="Posición donde desea iniciar">
+                    </div>
+                    <div class="form-group">
+                        <label for="end">En qué posición desea terminar de copiar</label>
+                        <input type="text" class="form-control" id="end" placeholder="Posición donde desea terminar">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="button" onclick="copyWithin()" class="btn btn-primary float-right">copy within</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="valueToFill">Qué valor desea rellenar</label>
+                        <input type="text" class="form-control" id="valueToFill" placeholder="Valor para rellenar" />
+                    </div>
+                    <div class="form-group">
+                        <label for="start-fill">En qué posición desea iniciar a rellenar</label>
+                        <input type="text" class="form-control" id="start-fill" placeholder="Posición donde desea iniciar" />
+                    </div>
+                    <div class="form-group">
+                        <label for="end-fill">En qué posición desea terminar de rellenar</label>
+                        <input type="text" class="form-control" id="end-fill" placeholder="Posición donde desea terminar" />
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="button" onclick="fill()" class="btn btn-primary float-right">fill</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p id="for-each"></p>
+                </div>
+                <div class="col-12">
+                    <button type="button" onclick="foreach()" class="btn btn-outline-primary">Iterar con forEach</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <br/>
+                    <p id="resultado-join"></p>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Divisor (/ por defecto)</span>
+                        </div>
+                        <input type="text" class="form-control" id="divisor">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button" onclick="join()">Unir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p id="entries"></p>
+                    <p id="keys"></p>
+                    <p id="values"></p>
+                </div>
+                <div class="col-12">
+                    <button type="button" onclick="entries()" class="btn btn-outline-warning">Array.prototype.entries()</button>
+                    <button type="button" onclick="keys()" class="btn btn-outline-dark">Array.prototype.keys()</button>
+                    <button type="button" onclick="values()" class="btn btn-outline-secondary">Array.prototype.values()</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <br/>
+                    <h6>Detalles de factura:</h6>
+                    <p>[{ "id": 1, "cantidad": 4, "codigo": "77012458", "producto": "Manzanas libra", "costo": 10 },</p>
+                    <p> { "id": 1, "cantidad": 5, "codigo": "77013513", "producto": "Peras libra", "costo": 12 },</p>
+                    <p> { "id": 1, "cantidad": 2, "codigo": "77454812", "producto": "Naranjas libra", "costo": 5 },</p>
+                    <p> { "id": 1, "cantidad": 10, "codigo": "77115772", "producto": "Uvas libra", "costo": 15 }]</p>
+                </div>
+                <div class="col-12">
+                    <p id="total-factura"></p>
+                </div>
+                <div class="col-12">
+                    <div class="float-right">
+                        <button type="button" onclick="mapReduce()" class="btn btn-outline-danger">Calcular total Factura</button>
+                        <button type="button" onclick="mapReduceRight()" class="btn btn-outline-danger">Calcular total Factura con ReduceRight</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <br/>
+                    <h6>Arreglo de Personas:</h6>
+                    <p>[{ name: "Juan", lastName: "Ordoñez", age: "30" },</p>
+                    <p> { name: "Manuel", lastName: "Rodríguez", age: "27" },</p>
+                    <p> { name: "Maria", lastName: "Del Valle", age: "15" }]</p>
+                </div>
+                <div class="col-12">
+                    <br/>
+                    <p>Ordenamiento: </p>
+                    <p id="sort-object"></p>
+                </div>
+                <div class="col-12">
+                    <div class="float-right">
+                        <button type="button" onclick="sortByFirstName()" class="btn btn-outline-primary">Ordenar por nombre</button>
+                        <button type="button" onclick="sortByLastName()" class="btn btn-outline-primary">Ordenar por apellido</button>
+                        <button type="button" onclick="sortByAge()" class="btn btn-outline-primary">Ordenar por edad</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <br/>
+                    <p>
+                        Arreglo Mujeres = ["Sonia", "Fernanda", "Luz"]... Arreglo Hombres = ["Rodrigo", "José", "Javier"];
+                    </p>
+                    <p id="concat"></p>
+                </div>
+                <div class="col-12">
+                    <div class="float-right">
+                        <button type="button" onclick="concat()" class="btn btn-outline-warning">Concatenar Hombres y Mujeres</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <button onclick="posicionesInexistentes()" class="btn btn-outline-success">Asignar posiciones inexistentes</button>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+
+    <script src="./arreglos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
