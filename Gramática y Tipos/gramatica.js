@@ -44,7 +44,7 @@ function constantes() {
     x = 8 //Una constante no se puede modificar;
 }
 
-var variableGlobal = "Yo soy una variable global..."
+var variableGlobal = "Yo soy una variable global...";
 
 function varGlobal() {
     alert('El valor de la variable global en la función varGlobal es ' + variableGlobal);
@@ -70,7 +70,10 @@ function imprimirVariablesConsola() {
     let letra = "letra";
     var booleanoTrue = true;
     let booleanoFalse = false;
-    var objetoJavaScript = { miembroObjeto: "valor" };
+    var objetoJavaScript = {
+        miembroObjeto: "valor",
+        otroMiembro: 4
+    };
     let funcionVariable = function (parametro) {
         console.log(parametro);
     };
@@ -83,6 +86,7 @@ function imprimirVariablesConsola() {
     console.log("El valor de booleanoFalse es " + booleanoFalse);
     console.log("El valor de objetoJavaScript es " + objetoJavaScript);
     console.log("El valor del miembro dentro de objetoJavaScript es " + objetoJavaScript.miembroObjeto);
+    console.log("El valor del OTRO miembro dentro de objetoJavaScript es " + objetoJavaScript.otroMiembro);
     console.log("El valor de funcionVariable es " + funcionVariable);
     console.log("El valor de funcionVariable puede ser ejecutado...");
     funcionVariable("Parametro función");
@@ -92,7 +96,7 @@ function imprimirVariablesConsola() {
 
 function valoresDeEscape() {
     console.log("Salto de línea... \nEsta es otra línea...");
-    console.log("Texto \'Este texto está dentro de comillas simples\' más texto...");
+    console.log('Texto \'Este texto está dentro de comillas simples\' más texto...');
     console.log("Texto \"Este texto está dentro de comillas dobles\" más texto...");
     console.log("Texto simple \t Texto tabulado...");
     console.log("Texto \\ Este texto está dentro de contrabarra \\ más texto...");

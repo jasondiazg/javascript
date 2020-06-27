@@ -4,7 +4,7 @@
   "description": "A programming course to learn the basic features of JavaScript as Language.",
   "main": "index.html",
   "scripts": {
-    "start": "http-server",
+    "start": "lite-server",
     "test": "test"
   },
   "repository": {
@@ -22,7 +22,10 @@
     "url": "https://github.com/jasondiazg/javascript/issues"
   },
   "homepage": "https://github.com/jasondiazg/javascript#readme",
+  "dependencies": {
+    "jquery": "3.3.1"
+  },
   "devDependencies": {
-    "http-server": "^0.12.3"
+    "lite-server": "^2.5.4"
   }
 }
