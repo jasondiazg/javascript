@@ -1,3 +1,68 @@
+function evaluateNumber() {
+    let number = parseInt(document.getElementById('number-if-else').value);
+    if (number % 2 === 0) {
+        alert("El número ingresado es par");
+    }
+    else {
+        alert("El número ingresado es impar");
+    }
+}
+
+function evaluateGrade() {
+    let number = parseInt(document.getElementById('number-if-else-if').value);
+    if (number >= 80) {
+        if (number > 100) {
+            alert("Nota inválida");
+        } else {
+            alert("Alumno con nota excelente");
+        }
+    } else if (number >= 65 && number <= 79) {
+        alert("Alumno aprobado");
+    } else if (number < 65) {
+        if (number > 0) {
+            alert("Alumno reprobado");
+        } else {
+            alert("Nota inválida");
+        }
+    }
+}
+
+function evaluateDay() {
+    let day = '';
+    let selectDay = document.getElementById('switch').value;
+    switch (selectDay) {
+        case 'monday': {
+            day = 'lunes';
+            break;
+        }
+        case 'tuesday': {
+            day = 'martes';
+            break;
+        }
+        case 'wednesday': {
+            day = 'miercoles';
+            break;
+        }
+        case 'thursday': {
+            day = 'jueves';
+            break;
+        }
+        case 'friday': {
+            day = 'viernes';
+            break;
+        }
+        case 'saturday': {
+            day = 'sábado';
+            break;
+        }
+        case 'sunday': {
+            day = 'domingo';
+            break;
+        }
+    }
+    alert(`Usted seleccionó el día ${day}.`);
+}
+
 function Persona(nombre, edad) {
     let persona = {};
     persona.nombre = nombre;
