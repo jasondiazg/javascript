@@ -2,8 +2,7 @@ function evaluateNumber() {
     let number = parseInt(document.getElementById('number-if-else').value);
     if (number % 2 === 0) {
         alert("El número ingresado es par");
-    }
-    else {
+    } else {
         alert("El número ingresado es impar");
     }
 }
@@ -18,12 +17,10 @@ function evaluateGrade() {
         }
     } else if (number >= 65 && number <= 79) {
         alert("Alumno aprobado");
-    } else if (number < 65) {
-        if (number > 0) {
-            alert("Alumno reprobado");
-        } else {
-            alert("Nota inválida");
-        }
+    } else if (number >= 0) {
+        alert("Alumno reprobado");
+    } else {
+        alert("Nota inválida");
     }
 }
 
@@ -57,6 +54,10 @@ function evaluateDay() {
         }
         case 'sunday': {
             day = 'domingo';
+            break;
+        }
+        default: {
+            day = 'inválido';
             break;
         }
     }
@@ -158,7 +159,7 @@ function referenceError() {
 
 function syntaxError() {
     try {
-        eval("alert('Hello)"); 
+        eval("alert('Hello)");
     } catch (e) {
         if (e instanceof SyntaxError)
             console.log(e.stack);
@@ -177,7 +178,7 @@ function typeError() {
 
 function uriError() {
     try {
-        decodeURI("%%%"); 
+        decodeURI("%%%");
     } catch (e) {
         if (e instanceof URIError)
             console.log(e.stack);
