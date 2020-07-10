@@ -99,23 +99,24 @@ function evaluarPersona(persona) {
         else {
             console.error(error.stack);
         }
+        alert(error.message);
     } finally {
-        console.error("Esta linea se ejecutará siempre");
+        console.warn("Esta linea se ejecutará siempre");
     }
 }
 
 function evaluarEdadYNombrePersona(persona) {
     if (persona.edad < 0 || persona.edad > 140) {
-        throw new Error("La persona " + persona.nombre + " tiene una edad menor que cero.");
+        throw new Error("La persona " + persona.nombre + " tiene una edad menor que cero o mayor que 140 años.");
     }
     if (!isNaN(persona.nombre)) {
-        throw new MiError("El nombre de " + persona.nombre + " no es un nombre válido.", "flujoErrores.js", 44);
+        throw new MiError("El nombre de " + persona.nombre + " no es un nombre válido.", "flujoErrores.js", 112);
     }
 }
 
 function evalError() {
     try {
-        eval("var myVariable = 9;")
+        eval("var myVariable = 9;");
         eval("var 8d='evalError'");
     } catch (e) {
         if (e instanceof EvalError || e instanceof SyntaxError)
