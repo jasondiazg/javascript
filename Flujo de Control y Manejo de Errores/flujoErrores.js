@@ -81,9 +81,11 @@ function MiError(message, fileName, lineNumber) {
 function generarExcepcion() {
     let alumno = new Persona('Juan', -8);
     let profesor = new Persona(26, 'Jason');
+    let director = new Persona('Pedro', 50);
 
     evaluarPersona(alumno);
     evaluarPersona(profesor);
+    evaluarPersona(director);
 }
 
 function evaluarPersona(persona) {
@@ -91,14 +93,14 @@ function evaluarPersona(persona) {
         evaluarEdadYNombrePersona(persona);
     } catch (error) {
         if (error.fileName && error.lineNumber) {
-            console.log(error.message + " in " + error.fileName + " at " + error.lineNumber);
-            console.log(error.stack);
+            console.error(error.message + " in " + error.fileName + " at " + error.lineNumber);
+            console.error(error.stack);
         }
         else {
-            console.log(error.stack);
+            console.error(error.stack);
         }
     } finally {
-        console.log("Esta linea se ejecutará siempre");
+        console.error("Esta linea se ejecutará siempre");
     }
 }
 
@@ -113,10 +115,11 @@ function evaluarEdadYNombrePersona(persona) {
 
 function evalError() {
     try {
+        eval("var myVariable = 9;")
         eval("var 8d='evalError'");
     } catch (e) {
-        if (e instanceof EvalError)
-            console.log(e.stack);
+        if (e instanceof EvalError || e instanceof SyntaxError)
+            console.error(e.stack);
     }
 }
 
@@ -126,7 +129,7 @@ function rangeError() {
         numero.toPrecision(101);
     } catch (e) {
         if (e instanceof RangeError)
-            console.log(e.stack);
+            console.error(e.stack);
     }
 }
 
@@ -135,7 +138,7 @@ function internalError() {
         loop(0);
     } catch (e) {
         if (e instanceof InternalError)
-            console.log(e.stack);
+            console.error(e.stack);
     }
 }
 
@@ -150,10 +153,10 @@ function referenceError() {
         if (true) {
             let numero = 1;
         }
-        console.log(numero);
+        console.error(numero);
     } catch (e) {
         if (e instanceof ReferenceError)
-            console.log(e.stack);
+            console.error(e.stack);
     }
 }
 
@@ -162,7 +165,7 @@ function syntaxError() {
         eval("alert('Hello)");
     } catch (e) {
         if (e instanceof SyntaxError)
-            console.log(e.stack);
+            console.error(e.stack);
     }
 }
 
@@ -172,16 +175,17 @@ function typeError() {
         letrasEnMinuscula.toUpperCase();
     } catch (e) {
         if (e instanceof TypeError)
-            console.log(e.stack);
+            console.error(e.stack);
     }
 }
 
 function uriError() {
     try {
+        decodeURI("https://google.com");
         decodeURI("%%%");
     } catch (e) {
         if (e instanceof URIError)
-            console.log(e.stack);
+            console.error(e.stack);
     }
 }
 
