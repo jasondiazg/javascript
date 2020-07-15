@@ -3,16 +3,16 @@
 
 <head>
     <title>Demo de Estructuras Repetitivas</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="../favicon.ico">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Academik</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
@@ -21,24 +21,31 @@
                     <a class="nav-link" href="../index.html">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gramática</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">Gramática</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="../Gramática y Tipos/gramaticaDemo.html">Gramática y tipos</a>
                         <a class="dropdown-item" href="../Operadores/operadoresDemo.html">Operadores</a>
-                        <a class="dropdown-item" href="../Flujo de Control y Manejo de Errores/flujoErroresDemo.html">Contro de flujo y manejo de errores</a>
+                        <a class="dropdown-item"
+                            href="../Flujo de Control y Manejo de Errores/flujoErroresDemo.html">Contro de flujo y
+                            manejo de errores</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estructuras de Datos</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">Estructuras de Datos</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="../Estructuras Repetitivas/estructurasRepetitivasDemo.html">Estructuras Repetitivas</a>
+                        <a class="dropdown-item"
+                            href="../Estructuras Repetitivas/estructurasRepetitivasDemo.html">Estructuras
+                            Repetitivas</a>
                         <a class="dropdown-item" href="../Funciones/funcionesDemo.html">Funciones</a>
                         <a class="dropdown-item" href="../Arreglos/arreglosDemo.html">Arreglos</a>
                         <a class="dropdown-item" href="../Objetos/objetosDemo.html">Objetos</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Asincronía</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">Asincronía</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="../Asincronia/asincronia.html">API Pública</a>
                         <a class="dropdown-item" href="../Promises/promises.html">Promises</a>
@@ -50,45 +57,101 @@
     </nav>
     <div class="jumbotron">
         <h1>Demo de Estructuras Repetitivas</h1>
-        <p>Esta demo incluye la sesión de Estructuras Repetitivas para el curso de programación avanzada Frontend de Academik</p>
+        <p>Esta demo incluye la sesión de Estructuras Repetitivas para el curso de programación avanzada Frontend de
+            Academik</p>
     </div>
 
     <div class="container">
 
-        <h3>While</h3>
-        <label>Ver numeros pares hasta:</label>
-        <input type="text" id="limite" />
-        <button onclick="bucleWhile()">Probar bucle while</button>
+        <div class="row">
+            <div class="col-12">
+                <h3>While</h3>
+                <label>Ver numeros pares hasta:</label>
+            </div>
+            <div class="col">
+                <input type="number" id="limite" class="form-control" />
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" onclick="bucleWhile()">Probar bucle while</button>
+            </div>
+        </div>
 
-        <h3>Do... While</h3>
-        <button onclick="bucleDoWhile()">Probar bucle do... while</button>
+        <br /><br />
 
-        <h3>For y For ... of</h3>
-        <label>Ver numeros primos hasta:</label>
-        <input type="text" id="limitePrimos" />
-        <button onclick="bucleForOf()">Probar bucles for y for...of</button>
+        <div class="row">
+            <div class="col-12">
+                <h3>Do... While</h3>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" onclick="bucleDoWhile()">Probar bucle do... while</button>
+            </div>
+        </div>
 
-        <h3>Juego de adivinar con Break y continue</h3>
-        <label>Ingresa un número:</label>
-        <input type="text" id="numero" />
-        <button onclick="breakDemo()">Break!</button>
-        <button onclick="continueDemo()">Continue!</button>
+        <br /><br />
 
-        <h3>Bucles anidados</h3>
-        <button onclick="buclesAnidados('1')">Anidar dos for</button>
-        <button onclick="buclesAnidados('2')">Anidar for y while</button>
-        <button onclick="buclesAnidados()">Anidar do for</button>
+        <div class="row">
+            <div class="col-12">
+                <h3>For y For ... of</h3>
+                <label>Ver numeros primos hasta:</label>
+            </div>
+            <div class="col">
+                <input type="number" id="limitePrimos" class="form-control" />
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" onclick="bucleForOf()">Probar bucles for y for...of</button>
+            </div>
+        </div>
 
-        <h3>For ... in</h3>
-        <button onclick="forIn()">Probar for...in</button>
+        <br /><br />
+
+        <div class="row">
+            <div class="col-12">
+                <h3>Juego de adivinar con Break y continue</h3>
+                <label>Ingresa un número:</label>
+            </div>
+            <div class="col">
+                <input type="text" id="numero" class="form-control" />
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" onclick="breakDemo()">Break!</button>
+                <button class="btn btn-success" onclick="continueDemo()">Continue!</button>
+            </div>
+            <div class="col"></div>
+        </div>
+
+        <br /><br />
+
+        <div class="row">
+            <div class="col-12">
+                <h3>Bucles anidados</h3>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" onclick="buclesAnidados('1')">Anidar dos for</button>
+                <button class="btn btn-danger" onclick="buclesAnidados('2')">Anidar for y while</button>
+                <button class="btn btn-success" onclick="buclesAnidados()">Anidar do for</button>
+            </div>
+        </div>
+
+        <br /><br />
+
+        <div class="row">
+            <div class="col-12">
+                <h3>For ... in</h3>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" onclick="forIn()">Probar for...in</button>
+            </div>
+        </div>
 
     </div>
 
     <script src="./estructurasRepetitivas.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 </body>
 
