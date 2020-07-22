@@ -7,23 +7,25 @@ function funcionComoVariable() {
     alert("Función ejecutada como variable");
 }
 
-let objeto = { "miFuncion": objectMemberFunction, "otroMiembro": "Valor del otro miembro" };
-function testObjectMemberFunction() {
+let objeto = { "miFuncion": funcionComoMiembro, "otroMiembro": "Valor del otro miembro" };
+function probarFuncionComoMiembro() {
     objeto.miFuncion();
     console.log(objeto.otroMiembro);
 }
 
-function objectMemberFunction() {
+function funcionComoMiembro() {
     alert("Función ejecutada desde un miembro de objeto");
 }
 
-let funcionSinNombre = () => {
+let funcionSinNombre = (parametro1, parametro2) => {
     alert("Función de flecha sin nombre");
 }
 
 let objeto2 = { "funcion": () => { alert("Función de flecha sin nombre como miembro de un objeto"); } };
 
-let variable = function() { alert("Función básica sin nombre dentro de un variable"); }
+let variable = function () {
+    alert("Función básica sin nombre dentro de un variable");
+}
 
 function funcionComoParametro() {
     let numero = parseInt(document.getElementById("numero").value);
@@ -32,7 +34,9 @@ function funcionComoParametro() {
     alert(ejecutarFuncion(saludar));
 }
 
-function saludar() { return "Hola a todos"; };
+function saludar() {
+    return "Hola a todos";
+};
 
 function ejecutarFuncion(genericFunction, valueToPass) {
     if (genericFunction) {
@@ -48,7 +52,7 @@ function ejecutarFuncion(genericFunction, valueToPass) {
 
 function factorial(n) {
     if (n) {
-        return n<2 ? 1 : n*factorial(n-1);
+        return n < 2 ? 1 : n * factorial(n - 1);
     }
     else {
         return "ERROR: debes ingresar un número.";
@@ -68,13 +72,15 @@ function parametrosPorValor() {
     console.log("varNull: " + varNull);
     console.log("varUndefined: " + varUndefined);
 
-    cambiarValoresPrimitivos(texto, numero, booleano, varNull, varUndefined);
+    texto = cambiarValoresPrimitivos(texto, numero, booleano, varNull, varUndefined);
 
     console.log("texto: " + texto);
     console.log("numero: " + numero);
     console.log("booleano: " + booleano);
     console.log("varNull: " + varNull);
     console.log("varUndefined: " + varUndefined);
+
+    String.
 }
 
 function cambiarValoresPrimitivos(texto, numero, booleano, varNull, varUndefined) {
@@ -83,19 +89,23 @@ function cambiarValoresPrimitivos(texto, numero, booleano, varNull, varUndefined
     booleano = false;
     varNull = "Cualquier cosa que no sea null";
     varUndefined = "Cualquier cosa que si esté definida";
+    return texto;
 }
 
 function parametrosPorReferencia() {
     let objeto = { miembro: "Yo soy un miembro..." };
     let arregloVacio = [];
+    let otroObjecto = { saludo: "Hola" };
 
-    console.log("objeto: " + objeto.miembro );
-    console.log("arregloVacio: " + arregloVacio[0] );
+    console.log("objeto: " + objeto.miembro);
+    console.log("arregloVacio: " + arregloVacio[0]);
 
     cambiarObjetos(objeto, arregloVacio);
+    cambiarObjetos({ ...otroObjecto }, arregloVacio);
 
-    console.log("objeto: " + objeto.miembro );
-    console.log("arregloVacio: " + arregloVacio[0] );
+    console.log("objeto: " + objeto.miembro);
+    console.log("arregloVacio: " + arregloVacio[0]);
+    console.log("otroObjecto: " + otroObjecto.saludo);
 }
 
 function cambiarObjetos(objeto, arregloVacio) {
@@ -103,12 +113,12 @@ function cambiarObjetos(objeto, arregloVacio) {
     arregloVacio[0] = "Index 0 ya tiene contenido";
 }
 
-function miFuncionPrueba (){
-    let variableDePrueba = ()=> { console.log("Hola a todos"); };
+function miFuncionPrueba() {
+    let variableDePrueba = () => { console.log("Hola a todos"); };
     variableDePrueba();
 }
 
-function crearPersonas () {
+function crearPersonas() {
     let persona1 = new Persona('Juan');
     persona1.setApellido('Rodriguez');
     persona1.setEdad(35);
@@ -136,8 +146,8 @@ function Persona(nombrePersona, apellidoPersona, edadPersona) {
     persona.getEdad = () => { return edad; }
     persona.setEdad = (edadPersona) => { edad = edadPersona; }
 
-    persona.getApellido = ()=> { return apellido; }
-    persona.setApellido = (apellidoPersona)=> { apellido = apellidoPersona; }
+    persona.getApellido = () => { return apellido; }
+    persona.setApellido = (apellidoPersona) => { apellido = apellidoPersona; }
 
     persona.getNombreCompleto = () => { return nombre + " " + apellido; }
     persona.getEdadCompleta = () => { return edad + " años"; }
@@ -153,8 +163,8 @@ function obtenerMayorNNumeros() {
 }
 
 function obtenerMayor() {
-    let mayor=0;
-    for(let i=0; i<arguments.length; i++) {
+    let mayor = 0;
+    for (let i = 0; i < arguments.length; i++) {
         if (arguments[i] > mayor) {
             mayor = arguments[i];
         }
@@ -165,7 +175,7 @@ function obtenerMayor() {
 function evaluateString() {
     let codeToEvaluate = document.getElementById("code").value;
     try {
-        eval(codeToEvaluate); 
+        eval(codeToEvaluate);
     } catch (ex) {
         alert(ex.message);
         console.log(ex.stack);
@@ -201,7 +211,7 @@ function parametrosPorDefecto() {
 }
 
 let dividir = (dividendo = 1, divisor = 1) => {
-    return dividendo/divisor;
+    return dividendo / divisor;
 }
 
 function parametrosRequeridos() {
@@ -217,7 +227,7 @@ function isRequired(type) {
     throw new Error("El parámetro texto es requerido, del tipo: " + type);
 }
 
-function capturarYMostrarValores(){
+function capturarYMostrarValores() {
     let parrafo = document.getElementById("parrafo").value;
     let confirmado = document.getElementById("confirmado").checked;
     let estadoCivil = document.getElementById("estadoCivil").value;
@@ -225,3 +235,22 @@ function capturarYMostrarValores(){
     console.warn("Confirmado value: " + confirmado);
     console.error("Estado Civil: " + estadoCivil);
 }
+
+
+
+let myFuncionEnVariable = function () {
+    console.log("Hola!");
+}
+
+
+myFuncionEnVariable();
+functionVar();
+
+
+function encender(carro = new Carro()) {
+    carro.encender();
+}
+
+encender();
+encender(carro);
+

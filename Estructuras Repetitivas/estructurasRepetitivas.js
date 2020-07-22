@@ -60,10 +60,10 @@ function mostrarPrimos(primos) {
 function breakDemo() {
     let numero = parseInt(document.getElementById("numero").value);
     let adivinado = false;
-    let contador = 0;
+    let contador = 1;
 
     while (!adivinado) {
-        let intento = prompt("Dame un número para adivinar", "")
+        let intento = prompt("Dame un número para adivinar", "");
         if (intento == numero) {
             console.log("Felicidades adivinaste. Lo hiciste en " + contador + " intentos.");
             break;
@@ -75,7 +75,7 @@ function breakDemo() {
 function continueDemo() {
     let numero = parseInt(document.getElementById("numero").value);
     let adivinado = false;
-    let contador = 0;
+    let contador = 1;
 
     while (!adivinado) {
         let intento = prompt("Dame un número para adivinar", "")

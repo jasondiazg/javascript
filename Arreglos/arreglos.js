@@ -1,33 +1,23 @@
-function loadData() {
+function cargarDatos() {
     arreglo = new Array(localStorage.getItem('array'));
     actualizarElementoHTML("array", arreglo);
 }
 
-function saveData() {
+function guardarDatos() {
     localStorage.setItem('array', arreglo);
 }
 
-function removeData() {
+function borrarDatos() {
     localStorage.removeItem('array');
-    loadData();
+    cargarDatos();
 }
 
-function posicionesInexistentes() {
-    let arregloPI = [];
-    arregloPI[5] = "Quinta posición";
-    arregloPI[2.3] = "Posición 2.3";
-
-    for (let i = 0; i < arregloPI.length; i++) {
-        console.log(arregloPI[i]);
+function mostrarArreglo(array, idElemento) {
+    let p = "";
+    for (elemento of array) {
+        p += ' [' + elemento + "], ";
     }
-
-    for (elemento of arregloPI) {
-        console.log(elemento);
-    }
-
-    if (arregloPI.hasOwnProperty(2.3)) {
-        console.log(arregloPI[2.3]);
-    }
+    actualizarElementoHTML(idElemento, p);
 }
 
 let arreglo = [];
@@ -96,14 +86,6 @@ function spliceIndex() {
         console.info("Tamaño del arreglo " + arreglo.length);  
     }
     limpiarElementoHTML("elemento-elimina-indice");
-}
-
-function mostrarArreglo(array, idElemento) {
-    let p = "";
-    for (elemento of array) {
-        p += ' [' + elemento + "], ";
-    }
-    actualizarElementoHTML(idElemento, p);
 }
 
 function entries() {
@@ -350,4 +332,22 @@ function concat() {
     let arregloHombres = ["Rodrigo", "José", "Javier"];
     let arregloHombresMujeres = arregloMujeres.concat(arregloHombres);
     actualizarElementoHTML("concat", arregloHombresMujeres);
+}
+
+function posicionesInexistentes() {
+    let arregloPosicionesInexistentes = [];
+    arregloPosicionesInexistentes[5] = "Quinta posición";
+    arregloPosicionesInexistentes[2.3] = "Posición 2.3";
+
+    for (let i = 0; i < arregloPosicionesInexistentes.length; i++) {
+        console.log(arregloPosicionesInexistentes[i]);
+    }
+
+    for (elemento of arregloPosicionesInexistentes) {
+        console.log(elemento);
+    }
+
+    if (arregloPosicionesInexistentes.hasOwnProperty(2.3)) {
+        console.log(arregloPosicionesInexistentes[2.3]);
+    }
 }
